@@ -19,51 +19,59 @@ void encoder (std::string str) {
     std::string subStr;
     std::string newStr;
    
-    // 1000    
-    subStr = str[str.length()-4];
-    compare = std::stoi(subStr);
-    for(int i = 0; i < (compare/1); i++) {
-        newStr.append("M");
+    // 1000
+    if(str[str.length()-4]){        
+        subStr = str[str.length()-4];
+        compare = std::stoi(subStr);
+        for(int i = 0; i < (compare/1); i++) {
+            newStr.append("M");
+        }
     }  
     //500
-    subStr = str[str.length()-3];
-    compare = std::stoi(subStr);
-    for(int i = 0; i < (compare/5); i++) {
-        newStr.append("D");
-    }
+    if(str[str.length()-3]){
+        subStr = str[str.length()-3];
+        compare = std::stoi(subStr);
+        for(int i = 0; i < (compare/5); i++) {
+            newStr.append("D");
+        }
     //100
-    subStr = str[str.length()-3];
-    compare = std::stoi(subStr);
-    value = (compare-((compare/5)*5))/1;
-    for(int i = 0; i < value; i++) {
-        newStr.append("C");
+        subStr = str[str.length()-3];
+        compare = std::stoi(subStr);
+        value = (compare-((compare/5)*5))/1;
+        for(int i = 0; i < value; i++) {
+            newStr.append("C");
+        }  
     }   
     //50
-    subStr = str[str.length()-2];
-    compare = std::stoi(subStr);
-    for(int i = 0; i < (compare/5); i++) {
-        newStr.append("L");
-    }     
+    if(str[str.length()-2]){
+        subStr = str[str.length()-2];
+        compare = std::stoi(subStr);
+        for(int i = 0; i < (compare/5); i++) {
+            newStr.append("L");
+        }     
     //10
-    subStr = str[str.length()-2];
-    compare = std::stoi(subStr);
-    value = (compare-((compare/5)*5))/1;
-    for(int i = 0; i < value; i++) {
-        newStr.append("X");
-    } 
+        subStr = str[str.length()-2];
+        compare = std::stoi(subStr);
+        value = (compare-((compare/5)*5))/1;
+        for(int i = 0; i < value; i++) {
+            newStr.append("X");
+        }
+    }
     //5
-    subStr = str[str.length()-1];
-    compare = std::stoi(subStr);
-    for(int i = 0; i < (compare/5); i++) {
-        newStr.append("V");
-    }       
+    if(str[str.length()-1]){
+        subStr = str[str.length()-1];
+        compare = std::stoi(subStr);
+        for(int i = 0; i < (compare/5); i++) {
+            newStr.append("V");
+        }       
     //1
-    subStr = str[str.length()-1];
-    compare = std::stoi(subStr);
-    value = (compare-(compare/5))/1;
-    for(int i = 0; i < value; i++) {
-        newStr.append("I");
-    }     
+        subStr = str[str.length()-1];
+        compare = std::stoi(subStr);
+        value = (compare-(compare/5))/1;
+        for(int i = 0; i < value; i++) {
+            newStr.append("I");
+        }  
+    }   
    std::cout << newStr << std::endl;
 }
 
